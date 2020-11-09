@@ -52,7 +52,7 @@ Open [localhost:3000](http://localhost:3000) to see if it's working.
 
 Example: ```/countries/NL```
 
-<b>Response<b>
+<b>Response</b>
 ```
 [
   "Aa en Hunze",
