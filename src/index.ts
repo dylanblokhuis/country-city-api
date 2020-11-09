@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;
 const cache = new NodeCache();
 
 app.get('/', (req, res) => {
-  res.send("Welcome to the countries and cities service!")
+  res.send("Welcome to the countries and cities API!")
 });
 
 app.get('/countries', async (req, res) => {
@@ -63,4 +63,4 @@ app.get('/countries/:countryCode', async (req, res) => {
   return res.send(cities)
 })
 
-app.listen(port, () => console.log(`Country city service is listening at port ${port}`))
+app.listen(port, () => console.log(`Country city API is listening at port ${port}`))
