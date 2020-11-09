@@ -16,6 +16,6 @@ RUN npm install --production
 
 RUN npm run build
 
-EXPOSE ${PORT}
+EXPOSE 3000
 
 CMD [ "npm", "run", "start" ]
