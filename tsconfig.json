@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+      "moduleResolution": "node",
+      "outDir": "dist",
+      "baseUrl": ".",
+  },
+  "include": [
+      "src/**/*"
+  ]
+}
