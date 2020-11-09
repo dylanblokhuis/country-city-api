@@ -15,9 +15,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/countries', async (req, res) => {
-  const { cities } = req.query;
-  
-  const cacheKey = cities ? `countriesWithCities` : `countries`
+  const cacheKey = 'countries'
   
   const cached = cache.get(cacheKey);
   if (cached) {
@@ -26,15 +24,6 @@ app.get('/countries', async (req, res) => {
 
   const countries = await parseCountries();
   console.log('Parsed countries');
-  
-  if (cities) {
-    for (const key of Object.keys(countries)) {
-      console.log('Parsing', countries[key].name);
-  
-      const cities = await parseCities(countries[key].url);
-      countries[key].cities = cities;
-    }
-  }
 
   cache.set(cacheKey, countries, 3600)
   return res.send(countries)
