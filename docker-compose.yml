@@ -1,8 +1,0 @@
-services: '3'
-
-services:
-  app:
-    build: .
-    ports:
-      - "${PORT}:${PORT}"
-    restart: always
